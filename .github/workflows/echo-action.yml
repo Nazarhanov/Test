@@ -1,0 +1,15 @@
+name: Echo
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Echo Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo Step
+      - run: echo Hello, GH Actions!
