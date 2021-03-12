@@ -12,4 +12,4 @@ jobs:
 
     steps:
       - name: Echo Step
-      - run: echo Hello, GH Actions!
+        run: echo "Hello, GH Actions!"
