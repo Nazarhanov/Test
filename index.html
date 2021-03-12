@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Example page</title>
+
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+
+      body {
+        max-width: 600px;
+        margin: 80px auto;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    </style>
   </head>
   <body>
-    Hello, there!
+    <h1>Hello, there!</h1>
+
+    <p>Github Actions Status:</p>
+    <img src="https://github.com/Nazarhanov/Test/workflows/Echo/badge.svg" alt="Echo workflow status" />
+    <img src="https://github.com/Nazarhanov/Test/workflows/Deploy/badge.svg" alt="Deploy workflow status" />
   </body>
 </html>
