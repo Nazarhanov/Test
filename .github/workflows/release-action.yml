@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: "Release to GitHub"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Add plugin for conventional commits
+        run: npm install conventional-changelog-conventionalcommits
+        working-directory: ./.github/workflows
+
+      - name: Release to GitHub
+        working-directory: ./.github/workflows
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: test-bot
+          GIT_AUTHOR_EMAIL: test@test.repo
+          GIT_COMMITTER_NAME: test-bot
+          GIT_COMMITTER_EMAIL: test@test.repo
+        run: npx semantic-release
